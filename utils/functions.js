@@ -1,4 +1,5 @@
 
+//Función que toma todos los precios de los autos y los envía a un array independiente
 function PreciosOrder(autos){
     const Precios = [];
 
@@ -9,7 +10,8 @@ function PreciosOrder(autos){
     return Precios;
 }
 
-
+//Funcion que obtiene el precio más bajo, toma el array de precios y el de autos, compara usando el filter de array y obtiene el 
+//Precio más bajo usando la función Math.min
 function PrecioBajo(precios, autos){
     let Precios = precios;
     
@@ -20,6 +22,8 @@ function PrecioBajo(precios, autos){
     console.log(`Vehiculo más barato: ${AutoPrecioBajo[0].Marca} ${AutoPrecioBajo[0].Modelo}`);
 }
 
+//Función que obtiene el precio más alto, toma el array de precios y el de autos, compara usando el filter y obtiene el precio más alto con Math.max
+
 function PrecioAlto(precios, autos){
    let Precios = precios;
    const PAlto =  Math.max(...Precios);
@@ -27,12 +31,16 @@ function PrecioAlto(precios, autos){
    console.log(`Vehiculo más caro: ${AutoPrecioAlto[0].Marca} ${AutoPrecioAlto[0].Modelo}`);
 }
 
+//Show muestra por consola todos los autos
+//Usamos operador ternario para definir si posee "Puertas" en caso de ser un auto o "Cilindrada" en caso de ser moto.
 function Show(autos){
    autos.forEach(auto => {
     console.log(`Marca: ${auto.Marca} // Modelo: ${auto.Modelo} // ${auto.Puertas ? "Puertas:" + auto.Puertas  : "Cilindrada:" + auto.Cilindrada } // Precio: $${auto.Precio.toFixed(2)}`);
     });
 }
 
+
+//OrderBy ordena todos los autos de mayor precio a menor precio usando la función sort
 function OrderBy(autos){
     
     let Ordenados = autos.sort((a,b) => {
@@ -53,6 +61,8 @@ function OrderBy(autos){
     })
 }
 
+
+//Auto Y obtiene todos los autos dentro del array de objetos que posean una Y en su marca.
 
 function AutoY(autos){
     
